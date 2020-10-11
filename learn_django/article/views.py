@@ -1,5 +1,8 @@
 from django.shortcuts import render,get_object_or_404
-from  django.http import HttpResponse,Http404
+from django.http import HttpResponse, Http404, JsonResponse
+from rest_framework import status
+from rest_framework.views import APIView
+
 from  .models import Article
 
 # Create your views here.
@@ -18,3 +21,4 @@ def article_list(request):
     context={}
     context['articles']=articles
     return render(request,'article_list.html',context)
+
